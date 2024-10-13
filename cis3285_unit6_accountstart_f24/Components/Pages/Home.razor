@@ -95,6 +95,10 @@
     {
         Console.WriteLine("Add Account button clicked."); // For debugging
 
+        if (newAccountName is null) {
+            Console.WriteLine("Null account name detected. Please enter an account name.");
+            return;
+        }
         string accountName = newAccountName;
         acctService.CreateAccount(accountName, AccountType.Silver);
 
